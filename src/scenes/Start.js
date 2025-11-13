@@ -41,8 +41,8 @@ export class Start extends Phaser.Scene {
         // draw map
         this.map = this.add.tilemap('tiles');
         var tileset = this.map.addTilesetImage('tilemap', 'pixelPlatformerTiles');
-        this.background = this.map.createLayer("Background", tileset, 0, 0);
-        this.level = this.map.createLayer("Objects", tileset, 0, 0);
+        this.background = this.map.createLayer("Background", tileset, 400, 400);
+        this.level = this.map.createLayer("Objects", tileset, 400, 400);
         this.level.setCollisionBetween(1, 151);
 
         // initialize player object
@@ -63,6 +63,8 @@ export class Start extends Phaser.Scene {
         this.player.velocityMaxXB = 200;
         this.player.velocityMaxYB = 600;
 
+        this.player.jumpVelocity = -300;
+
         // declare maximum velocity in x and y directions
         this.player.setMaxVelocity(this.player.velocityMaxXS, this.player.velocityMaxYS);
 
@@ -71,6 +73,9 @@ export class Start extends Phaser.Scene {
 
         // set trigger for jumping
         this.player.jump = false;
+
+        // check for facing
+        this.player.facingRight = true;
 
         // set collision between player and level
         this.physics.add.collider(this.level, this.player);
@@ -162,6 +167,34 @@ export class Start extends Phaser.Scene {
 
         this.player.setVelocityX(this.player.velocityX);
 
+        // turn player sprite around when moving
+        if (this.player.facingRight && (this.player.velocityX < 0))
+        {
+            this.player.facingRight = false;
+
+            if (this.player.small)
+            {
+                this.player.setTexture('characterSmallLeft1');
+            }
+            else
+            {
+                this.player.setTexture('characterBigLeft1');
+            }
+        }
+        else if (!this.player.facingRight && (this.player.velocityX > 0))
+        {
+            this.player.facingRight = true;
+
+            if (this.player.small)
+            {
+                this.player.setTexture('characterSmallRight1');
+            }
+            else
+            {
+                this.player.setTexture('characterBigRight1');
+            }
+        }
+
         // check for jumping
         if (this.player.small && (this.keyW.isDown || this.up.isDown || this.space.isDown))
         {
@@ -173,13 +206,50 @@ export class Start extends Phaser.Scene {
             });
         }
 
-        if (this.player.small && this.player.jump)
+        if (this.player.small && this.player.jump && this.player.body.blocked.down)
         {
-            // do a jump - todo
-            console.log('Jump!');
-            this.player.setVelocityY(-400);
+            this.player.setVelocityY(this.player.jumpVelocity);
             this.player.jump = false;
         }
+
     }
     
+    // function for making the player grow larger
+    growFunction() {
+
+        this.player.small = false;
+
+        this.player.y -= 11;
+        this.player.setVelocity(0, 0);
+
+        if (this.player.facingRight)
+        {
+            this.player.setTexture('characterBigRight1').setScale(1.5);
+        }
+        else
+        {
+            this.player.setTexture('characterBigLeft1').setScale(1.5);
+        }
+
+        this.player.setSize(24, 24);
+    }
+
+    // function for making the player grow smaller
+    shrinkFunction() {
+
+        this.player.small = true;
+
+        this.player.setVelocity(0, 0);
+        
+        if (this.player.facingRight)
+        {
+            this.player.setTexture('characterSmallRight1').setScale(1);
+        }
+        else
+        {
+            this.player.setTexture('characterSmallLeft1').setScale(1);
+        }
+
+        this.player.setSize(15, 14);
+    }
 }
