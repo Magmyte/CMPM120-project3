@@ -13,7 +13,7 @@ const config = {
         arcade: {
             gravity: {
                 x: 0,
-                y: 50
+                y: 500
             },
             debug: true
         }
