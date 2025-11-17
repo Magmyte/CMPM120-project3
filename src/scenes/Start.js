@@ -50,9 +50,12 @@ export class Start extends Phaser.Scene {
         // initialize player object
         this.player = this.physics.add.sprite(width / 2, height / 2, 'characterSmallRight1').setScale(1);
         var camera = this.cameras.main;
-        camera.startFollow(this.player);
-        camera.setZoom(4);
         
+        camera.startFollow(this.player, false, 0.3, 0.3);
+        camera.setZoom(4);
+        camera.setBounds(350,350,800,500);
+        this.coordxtext = this.add.text(0,0, "coords x" + this.player.x, {fontSize: "32px"});
+        this.coordytext = this.add.text(0,500, "coords y" + this.player.y, {fontSize: "32px"});
         // todo: implement player object
         // playerObject = new Player(this, x, y, 'characterSmallRight1');
 
@@ -102,13 +105,17 @@ export class Start extends Phaser.Scene {
         this.space = this.input.keyboard.addKey("SPACE", false, false);
 
         
+
+        
     }
 
     update(time, dTime) {
         
         // check movement
         let moveX = 0;
-
+        
+        this.coordxtext.setText("coordx" + this.player.x);
+        this.coordytext.setText("coordy" + this.player.y);
         if (this.keyA.isDown || this.left.isDown)
         {
             moveX--;
