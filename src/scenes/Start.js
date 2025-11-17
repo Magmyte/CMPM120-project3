@@ -49,6 +49,10 @@ export class Start extends Phaser.Scene {
 
         // initialize player object
         this.player = this.physics.add.sprite(width / 2, height / 2, 'characterSmallRight1').setScale(1);
+        var camera = this.cameras.main;
+        camera.startFollow(this.player);
+        camera.setZoom(4);
+        
         // todo: implement player object
         // playerObject = new Player(this, x, y, 'characterSmallRight1');
 
@@ -96,6 +100,8 @@ export class Start extends Phaser.Scene {
         this.right = this.input.keyboard.addKey("RIGHT", false, true);
 
         this.space = this.input.keyboard.addKey("SPACE", false, false);
+
+        
     }
 
     update(time, dTime) {
