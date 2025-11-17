@@ -1,3 +1,5 @@
+import {Player} from '../gameobjects/player.js';
+
 export class Start extends Phaser.Scene {
 
     constructor() {
@@ -47,6 +49,8 @@ export class Start extends Phaser.Scene {
 
         // initialize player object
         this.player = this.physics.add.sprite(width / 2, height / 2, 'characterSmallRight1').setScale(1);
+        // todo: implement player object
+        // playerObject = new Player(this, x, y, 'characterSmallRight1');
 
         // player variables
         this.player.small = true; // boolean for declaring character size - set to false if character is big
