@@ -53,7 +53,7 @@ export class Start extends Phaser.Scene {
         
         camera.startFollow(this.player, false, 0.3, 0.3);
         camera.setZoom(4);
-        camera.setBounds(350,350,800,500);
+        camera.setBounds(350,350,800,500);      
         // todo: implement player object
         // playerObject = new Player(this, x, y, 'characterSmallRight1');
 
