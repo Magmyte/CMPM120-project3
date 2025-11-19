@@ -48,20 +48,26 @@ export class Start extends Phaser.Scene {
         this.level.setCollisionBetween(1, 151);
 
         // initialize player object
-        this.player = this.physics.add.sprite(width / 2, height / 2, 'characterSmallRight1').setScale(1);
+        // this.player = this.physics.add.sprite(width / 2, height / 2, 'characterSmallRight1').setScale(1);
+
+        // todo: implement player object
+        this.playerObject = new Player(this, width / 2, height / 2, 'characterSmallRight1');
+
+        // set collision between player and level
+        this.physics.add.collider(this.level, this.playerObject);
+
+        // initialize camera
         var camera = this.cameras.main;
         
-        camera.startFollow(this.player, false, 0.3, 0.3);
+        camera.startFollow(this.playerObject, false, 0.3, 0.3);
         camera.setZoom(4);
-        camera.setBounds(350,350,800,500);      
-        // todo: implement player object
-        // playerObject = new Player(this, x, y, 'characterSmallRight1');
+        camera.setBounds(350,350,800,500);
 
         // player variables
-        this.player.small = true; // boolean for declaring character size - set to false if character is big
+        /* this.player.small = true; // boolean for declaring character size - set to false if character is big
 
-        this.player.accelerationXS = 300;
-        this.player.deccelerationXS = 600;
+        this.player.accelerationXS = 500;
+        this.player.deccelerationXS = 1000;
 
         this.player.accelerationXB = 200;
         this.player.deccelerationXB = 600;
@@ -87,7 +93,7 @@ export class Start extends Phaser.Scene {
         this.player.facingRight = true;
 
         // set collision between player and level
-        this.physics.add.collider(this.level, this.player);
+        this.physics.add.collider(this.level, this.playerObject);
 
         // grab key inputs
         this.keyW = this.input.keyboard.addKey("W", false, false);
@@ -100,17 +106,13 @@ export class Start extends Phaser.Scene {
         this.down = this.input.keyboard.addKey("DOWN", false, false);
         this.right = this.input.keyboard.addKey("RIGHT", false, true);
 
-        this.space = this.input.keyboard.addKey("SPACE", false, false);
-
-        
-
-        
+        this.space = this.input.keyboard.addKey("SPACE", false, false); */
     }
 
     update(time, dTime) {
         
         // check movement
-        let moveX = 0;
+        /* let moveX = 0;
     
         if (this.keyA.isDown || this.left.isDown)
         {
@@ -223,7 +225,7 @@ export class Start extends Phaser.Scene {
         {
             this.player.setVelocityY(this.player.jumpVelocity);
             this.player.jump = false;
-        }
+        } */
 
     }
     
