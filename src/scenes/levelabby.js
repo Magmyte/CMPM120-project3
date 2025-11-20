@@ -1,9 +1,9 @@
 import {Player} from '../gameobjects/player.js';
 
-export class Start extends Phaser.Scene {
+export class levelabby extends Phaser.Scene {
 
     constructor() {
-        super('Start');
+        super({key: 'levelabby'});
     }
 
     preload() {
@@ -12,7 +12,7 @@ export class Start extends Phaser.Scene {
         this.load.image('pixelPlatformerTiles', 'assets/kenney_pixel-platformer/Tilemap/tilemap.png');
 
         // map asset
-        this.load.tilemapTiledJSON('tiles', 'assets/Maps/test-map.tmj');
+        this.load.tilemapTiledJSON('tiles', 'assets/Maps/level1cmpm.tmj');
 
         // character image assets
         this.load.image('characterSmallLeft1', 'assets/kenney_pixel-platformer/Tiles/Characters/tile_0018.png');
@@ -41,20 +41,24 @@ export class Start extends Phaser.Scene {
         const {width, height} = this.scale;
 
         // draw map
-        this.map = this.add.tilemap('tiles');
+        this.map = this.add.tilemap("tiles");
         var tileset = this.map.addTilesetImage('tilemap', 'pixelPlatformerTiles');
         this.background = this.map.createLayer("Background", tileset, 400, 400);
-        this.level = this.map.createLayer("Objects", tileset, 400, 400);
-        this.level.setCollisionBetween(1, 151);
+        this.obstacles = this.map.createLayer("Obstacles", tileset, 400, 400);
+        this.coins = this.map.getObjectLayer("Coins");
+        this.bounceObject = this.map.getObjectLayer("Bounce Object");
+        this.growthObject = this.map.getObjectLayer("Growth Object");
+        this.crates = this.map.getObjectLayer("crates");
+        this.key = this.map.getObjectLayer("Key");
+        this.ending = this.map.getObjectLayer("ending");
+       // this.obstacles.setCollisionBetween(1, 151);
 
         // initialize player object
-        // this.player = this.physics.add.sprite(width / 2, height / 2, 'characterSmallRight1').setScale(1);
-
-        // todo: implement player object
         this.playerObject = new Player(this, width / 2, height / 2, 'characterSmallRight1');
 
         // set collision between player and level
-        this.physics.add.collider(this.level, this.playerObject);
+        //this.physics.add.collider(this.obstacles, this.playerObject);
+       // this.physics.add.collider(this.crates, this.playerObject);
 
         // initialize camera
         var camera = this.cameras.main;
@@ -62,15 +66,9 @@ export class Start extends Phaser.Scene {
         camera.startFollow(this.playerObject, false, 0.3, 0.3);
         camera.setZoom(4);
         camera.setBounds(350,350,800,500);
-
-        this.xkey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X);
     }
 
     update(time, dTime) {
-    
-        if(Phaser.Input.Keyboard.JustDown(this.xkey)){
-            this.scene.start("levelabby");
-        }
 
     }
 }

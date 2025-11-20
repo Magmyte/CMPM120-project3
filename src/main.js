@@ -1,4 +1,6 @@
 import { Start } from './scenes/Start.js';
+import {Menu} from './scenes/menu.js';
+import { levelabby } from './scenes/levelabby.js';
 
 const config = {
     type: Phaser.AUTO,
@@ -20,7 +22,7 @@ const config = {
     },
     pixelArt: false,
     scene: [
-        Start
+        Start, Menu, levelabby
     ],
     scale: {
         mode: Phaser.Scale.FIT,
