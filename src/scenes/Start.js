@@ -8,11 +8,11 @@ export class Start extends Phaser.Scene {
 
     preload() {
 
-        // tilemap asset
-        this.load.image('pixelPlatformerTiles', 'assets/kenney_pixel-platformer/Tilemap/tilemap.png');
+        // tileset asset
+        this.load.image('pixelPlatformerTilesPacked', 'assets/kenney_pixel-platformer/Tilemap/tilemap_packed.png');
 
         // map asset
-        this.load.tilemapTiledJSON('tiles', 'assets/Maps/test-map.tmj');
+        this.load.tilemapTiledJSON('testTiles', 'assets/Maps/test-map.tmj');
 
         // character image assets
         this.load.image('characterSmallLeft1', 'assets/kenney_pixel-platformer/Tiles/Characters/tile_0018.png');
@@ -30,9 +30,6 @@ export class Start extends Phaser.Scene {
 
         this.load.image('characterBigLeftDown', 'assets/kenney_pixel-platformer/Tiles/Characters/tile_0023.png');
         this.load.image('characterBigRightDown', 'assets/kenney_pixel-platformer/Tiles/Characters/tile_0032.png');
-
-        // coin image asset
-        this.load.image('coin', 'assets/kenney_pixel-platformer/Tiles/tile_0180.png');
     }
 
     create() {
@@ -41,16 +38,13 @@ export class Start extends Phaser.Scene {
         const {width, height} = this.scale;
 
         // draw map
-        this.map = this.add.tilemap('tiles');
-        var tileset = this.map.addTilesetImage('tilemap', 'pixelPlatformerTiles');
+        this.map = this.add.tilemap('testTiles');
+        var tileset = this.map.addTilesetImage('pixelPlatformerTilemapPacked', 'pixelPlatformerTilesPacked');
         this.background = this.map.createLayer("Background", tileset, 400, 400);
         this.level = this.map.createLayer("Objects", tileset, 400, 400);
         this.level.setCollisionBetween(1, 151);
 
         // initialize player object
-        // this.player = this.physics.add.sprite(width / 2, height / 2, 'characterSmallRight1').setScale(1);
-
-        // todo: implement player object
         this.playerObject = new Player(this, width / 2, height / 2, 'characterSmallRight1');
 
         // set collision between player and level
@@ -62,15 +56,9 @@ export class Start extends Phaser.Scene {
         camera.startFollow(this.playerObject, false, 0.3, 0.3);
         camera.setZoom(4);
         camera.setBounds(350,350,800,500);
-
-        this.xkey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X);
     }
 
     update(time, dTime) {
-    
-        if(Phaser.Input.Keyboard.JustDown(this.xkey)){
-            this.scene.start("levelabby");
-        }
 
     }
 }

@@ -9,15 +9,15 @@ export class Player extends Phaser.GameObjects.Sprite {
         // add to physics
         this.scene.physics.add.existing(this);
 
-        // player variables
+        // player variables - all values should be changed here
 
-        this.accelerationXS = 500;
-        this.deccelerationXS = 1600;
+        this.accelerationXS = 400;
+        this.deccelerationXS = 1000;
 
-        this.accelerationXB = 250;
-        this.deccelerationXB = 1200;
+        this.accelerationXB = 300;
+        this.deccelerationXB = 800;
 
-        this.velocityMaxXS = 210;
+        this.velocityMaxXS = 180;
         this.velocityMaxYS = 400;
 
         this.velocityMaxXB = 100;
@@ -26,12 +26,12 @@ export class Player extends Phaser.GameObjects.Sprite {
         this.jumpVelocity = -250;
 
         this.smashVelocity = 450;
+        this.smashDecceleration = 100;
+
+        this.deccelerationXBReset = this.deccelerationXB;
 
         // declare maximum velocity in x and y directions
         this.body.maxVelocity.set(this.velocityMaxXS, this.velocityMaxYS);
-
-        this.velocityX = 0;
-        this.velocityY = 0;
 
         // boolean for if character is small or big - true is small, false is big
         this.small = true;
@@ -103,14 +103,14 @@ export class Player extends Phaser.GameObjects.Sprite {
 
                 if (this.facingRight)
                 {
-                    this.velocityX = this.smashVelocity;
+                    this.body.setVelocityX(this.smashVelocity);
                 }
                 else
                 {
-                    this.velocityX = (-1) * this.smashVelocity;
+                    this.body.setVelocityX((-1) * this.smashVelocity);
                 }
 
-                this.deccelerationXB = 100;
+                this.deccelerationXB = this.smashDecceleration;
 
                 this.scene.time.delayedCall(150, () =>
                 {
@@ -118,7 +118,7 @@ export class Player extends Phaser.GameObjects.Sprite {
 
                     this.body.maxVelocity.set(this.velocityMaxXB, this.velocityMaxYB);
 
-                    this.deccelerationXB = 1200;
+                    this.deccelerationXB = this.deccelerationXBReset;
                 });
             }
         });
@@ -145,6 +145,28 @@ export class Player extends Phaser.GameObjects.Sprite {
                 this.shrinkFunction();
             }
         });
+
+        // debug key for switching scenes - todo: remove later
+        this.keyZ = this.scene.input.keyboard.addKey("Z", false, false);
+
+        this.keyZ.on("down", () =>
+        {
+            this.scene.scene.start("Start");
+        });
+
+        this.keyX = this.scene.input.keyboard.addKey("X", false, false);
+
+        this.keyX.on("down", () =>
+        {
+            this.scene.scene.start("levelabby");
+        });
+
+        this.keyC = this.scene.input.keyboard.addKey("C", false, false);
+
+        this.keyC.on("down", () =>
+        {
+            this.scene.scene.start('levelCharles');
+        });
     }
 
     preUpdate(time, dTime) {
@@ -165,24 +187,24 @@ export class Player extends Phaser.GameObjects.Sprite {
         {
             if (this.small)
             {
-                if (moveX * this.velocityX < 0)
+                if (moveX * this.body.velocity.x < 0)
                 {
-                    this.velocityX += moveX * Math.max(this.accelerationXS, this.deccelerationXS) * dTime / 1000;
+                    this.body.setAccelerationX(moveX * Math.max(this.accelerationXS, this.deccelerationXS));
                 }
                 else
                 {
-                    this.velocityX += moveX * this.accelerationXS * dTime / 1000;
+                    this.body.setAccelerationX(moveX * this.accelerationXS);
                 }
             }
             else
             {
-                if (moveX * this.velocityX < 0)
+                if (moveX * this.body.velocity.x < 0)
                 {
-                    this.velocityX += moveX * Math.max(this.accelerationXB, this.deccelerationXB) * dTime / 1000;
+                    this.body.setAccelerationX(moveX * Math.max(this.accelerationXB, this.deccelerationXB));
                 }
                 else
                 {
-                    this.velocityX += moveX * this.accelerationXB * dTime / 1000;
+                    this.body.setAccelerationX(moveX * this.accelerationXB);
                 }
             }
         }
@@ -190,52 +212,36 @@ export class Player extends Phaser.GameObjects.Sprite {
         {
             if (this.small)
             {
-                if (this.velocityX > 0)
+                if (this.body.velocity.x > 0)
                 {
-                    this.velocityX -= this.deccelerationXS * dTime / 1000;
-                    
-                    if (this.velocityX < 0)
-                    {
-                        this.velocityX = 0;
-                    }
+                    this.body.setAccelerationX((-1) * this.deccelerationXS);
                 }
-                else if (this.velocityX < 0)
+                else if (this.body.velocity.x < 0)
                 {
-                    this.velocityX += this.deccelerationXS * dTime / 1000;
-
-                    if (this.velocityX > 0)
-                    {
-                        this.velocityX = 0;
-                    }
+                    this.body.setAccelerationX(this.deccelerationXS);
                 }
             }
             else
             {
-                if (this.velocityX > 0)
+                if (this.body.velocity.x > 0)
                 {
-                    this.velocityX -= this.deccelerationXB * dTime / 1000;
-                    
-                    if (this.velocityX < 0)
-                    {
-                        this.velocityX = 0;
-                    }
+                    this.body.setAccelerationX((-1) * this.deccelerationXB);
                 }
-                else if (this.velocityX < 0)
+                else if (this.body.velocity.x < 0)
                 {
-                    this.velocityX += this.deccelerationXB * dTime / 1000;
+                    this.body.setAccelerationX(this.deccelerationXB);
+                }
+            }
 
-                    if (this.velocityX > 0)
-                    {
-                        this.velocityX = 0;
-                    }
-                }
+            if (Math.abs(this.body.velocity.x) < 10)
+            {
+                this.body.setVelocityX(0);
+                this.body.setAccelerationX(0);
             }
         }
 
-        this.body.setVelocityX(this.velocityX);
-
         // turn player sprite around when moving
-        if (this.facingRight && (this.velocityX < 0))
+        if (this.facingRight && (this.body.velocity.x < 0))
         {
             this.facingRight = false;
 
@@ -248,7 +254,7 @@ export class Player extends Phaser.GameObjects.Sprite {
                 this.setTexture('characterBigLeft1');
             }
         }
-        else if (!this.facingRight && (this.velocityX > 0))
+        else if (!this.facingRight && (this.body.velocity.x > 0))
         {
             this.facingRight = true;
 
