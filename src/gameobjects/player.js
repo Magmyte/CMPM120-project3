@@ -123,6 +123,14 @@ export class Player extends Phaser.GameObjects.Sprite {
             }
         });
 
+        // key for restarting the scene
+        this.keyR = this.scene.input.keyboard.addKey("R", false, false);
+
+        this.keyR.on("down", () =>
+        {
+            this.scene.scene.restart();
+        });
+
         // debug key for switching sizes - todo: remove later
         this.keyI = this.scene.input.keyboard.addKey("I", false, false);
 
