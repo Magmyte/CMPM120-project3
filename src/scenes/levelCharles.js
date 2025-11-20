@@ -1,9 +1,9 @@
 import {Player} from '../gameobjects/player.js';
 
-export class Start extends Phaser.Scene {
+export class levelCharles extends Phaser.scene {
 
     constructor() {
-        super('Start');
+        super({key: 'levelCharles', active: false});
     }
 
     preload() {
