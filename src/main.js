@@ -21,7 +21,7 @@ const config = {
             debug: true
         }
     },
-    pixelArt: false,
+    pixelArt: true,
     scene: [
         Start, levelabby, levelCharles, Menu
     ],
