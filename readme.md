@@ -17,7 +17,7 @@
 
 ## Level Details
 - PH text.
-- PH text.
+- Charles's level features pushable blocks. These blocks can only be pushed while the player is big. Try to use these blocks to get the bonus objective (the gem)!
 
 ## Bonus Elements
 - Alternate player movement: the player character can dash while big.
