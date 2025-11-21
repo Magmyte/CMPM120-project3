@@ -123,6 +123,36 @@ export class Player extends Phaser.GameObjects.Sprite {
             }
         });
 
+        this.down.on("down", () =>
+        {
+            if (!this.small && !this.smashing && this.body.blocked.down)
+            {
+                this.smashing = true;
+
+                this.body.maxVelocity.set(this.smashVelocity, this.velocityMaxYB);
+
+                if (this.facingRight)
+                {
+                    this.body.setVelocityX(this.smashVelocity);
+                }
+                else
+                {
+                    this.body.setVelocityX((-1) * this.smashVelocity);
+                }
+
+                this.deccelerationXB = this.smashDecceleration;
+
+                this.scene.time.delayedCall(150, () =>
+                {
+                    this.smashing = false;
+
+                    this.body.maxVelocity.set(this.velocityMaxXB, this.velocityMaxYB);
+
+                    this.deccelerationXB = this.deccelerationXBReset;
+                });
+            }
+        });
+
         // key for restarting the scene
         this.keyR = this.scene.input.keyboard.addKey("R", false, false);
 
