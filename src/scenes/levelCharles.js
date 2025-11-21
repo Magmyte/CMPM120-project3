@@ -17,8 +17,8 @@ export class levelCharles extends Phaser.Scene {
 
         // interactives assets
         this.load.image('win', 'assets/kenney_pixel-platformer/Tiles/tile_0112.png');
-        this.load.image('grow', 'assets/kenney_pixel-platformer/Tiles/tile_0027.png');
-        this.load.image('shrink', 'assets/kenney_pixel-platformer/Tiles/tile_0028.png');
+        this.load.image('grow', 'assets/kenney_pixel-platformer/Tiles/tile_0028.png');
+        this.load.image('shrink', 'assets/kenney_pixel-platformer/Tiles/tile_0027.png');
         this.load.image('bonus', 'assets/kenney_pixel-platformer/Tiles/tile_0067.png');
         this.load.image('coin', 'assets/kenney_pixel-platformer/Tiles/tile_0180.png');
     }
@@ -77,6 +77,7 @@ export class levelCharles extends Phaser.Scene {
         this.physics.add.collider(this.level, this.grink);
         this.physics.add.collider(this.level, this.pushables);
         this.physics.add.collider(this.grink, this.pushables);
+        this.physics.add.collider(this.push1, this.push2);
         this.physics.add.collider(this.grink, this.push3);
 
         // initialize camera
