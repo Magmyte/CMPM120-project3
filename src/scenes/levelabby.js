@@ -19,6 +19,8 @@ export class levelabby extends Phaser.Scene {
         this.load.image('lock', 'assets/kenney_pixel-platformer/Tiles/tile_0028.png');
         this.load.image('bounce', 'assets/kenney_pixel-platformer/Tiles/tile_0107.png');
         this.load.image('shrink','assets/kenney_pixel-platformer/Tiles/tile_0011.png');
+        this.load.audio('coin', 'assets/audio/334302__sojan__coinflic6.mp3');
+
     }
 
     create() {
@@ -31,6 +33,7 @@ export class levelabby extends Phaser.Scene {
         this.keyFound = false;
         this.score = 0;
         this.messageDisplayed = false;
+        this.coinSound = this.sound.add('coin');
         var tileset = this.map.addTilesetImage('pixelPlatformerTilemapPacked', 'pixelPlatformerTilesPacked');
         var tileset2 = this.map.addTilesetImage('tileset-tiles', 'pixelPlatformerTilesPacked');
         this.background = this.map.createLayer("Background", tileset, 0, 0);
@@ -79,6 +82,8 @@ export class levelabby extends Phaser.Scene {
         {
             if(interactables.type ==  "coin"){
                 interactables.destroy(true);
+                this.coinSound.play();
+                this.score = this.score + 1;
             }
             if (interactables.type == "bounce"){
                 if(!this.playerObject.small)
@@ -102,9 +107,14 @@ export class levelabby extends Phaser.Scene {
                 this.keyFound = true;
                 interactables.destroy(true);
             }
+            if(interactables.type == "diamond"){
+              this.score = this.score + 10;
+              interactables.destroy(true);
+            }
             if(interactables.type == "lock"){
                 if(this.keyFound == true && this.messageDisplayed == false){
                  this.winText = this.add.text(this.playerObject.x, this.playerObject.y, "wahoo youpi you did it!! :D");
+                 this.scoreText = this.add.text(this.playerObject.x, this.playerObject.y - 40, this.score);
                 }
                 else if (this.messageDisplayed == false){
                 this.winText = this.add.text(this.playerObject.x, this.playerObject.y, "find the key...");
@@ -113,6 +123,7 @@ export class levelabby extends Phaser.Scene {
                 this.time.delayedCall(3000, ()=>
                 {
                     this.winText.destroy(true);
+                    this.scoreText.destroy(true);
                     this.messageDisplayed = false;
                 });
 
