@@ -18,6 +18,7 @@
 ## Level Details
 - PH text.
 - Charles's level features pushable blocks. These blocks can only be pushed while the player is big. Try to use these blocks to get the bonus objective (the gem)!
+- Abby's level involves a kind of brick breaking mechanic that is only possible while the player is big. They need to be destroyed to get the key to finish the level, and to get some bonus points (coins + diamond). You can also get a score based on how many points you get. 
 
 ## Bonus Elements
 - Alternate player movement: the player character can dash while big.
