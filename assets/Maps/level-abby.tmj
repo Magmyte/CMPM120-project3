@@ -35,12 +35,12 @@
         }, 
         {
          "data":[39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39,
-            39, 39, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 39, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 39, 39,
-            39, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38, 39,
-            39, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38, 39,
-            39, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 78, 79, 79, 79, 40, 0, 0, 0, 0, 0, 0, 78, 79, 20, 0, 0, 0, 0, 38, 39,
-            39, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 38, 39,
-            39, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 17, 0, 0, 0, 0, 57, 0, 0, 0, 0, 38, 39,
+            39, 39, 59, 59, 39, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 39, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 39, 39,
+            39, 40, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38, 39,
+            39, 40, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38, 39,
+            39, 40, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 78, 79, 79, 79, 40, 0, 0, 0, 0, 0, 0, 78, 79, 20, 0, 0, 0, 0, 38, 39,
+            39, 40, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 38, 39,
+            39, 40, 0, 0, 77, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 17, 0, 0, 0, 0, 57, 0, 0, 0, 0, 38, 39,
             39, 39, 80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 38, 39,
             39, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 17, 0, 0, 0, 17, 0, 0, 57, 0, 0, 0, 0, 38, 39,
             39, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 38, 39,
@@ -67,59 +67,55 @@
         {
          "draworder":"topdown",
          "id":3,
-         "name":"ending",
+         "name":"Interactable",
          "objects":[
                 {
                  "gid":209,
                  "height":18,
                  "id":1,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"lock"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":18,
                  "x":36.0730350104336,
                  "y":89.1298400185486
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":4,
-         "name":"Key",
-         "objects":[
+                }, 
                 {
                  "gid":208,
                  "height":18,
                  "id":31,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"key"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":18,
                  "x":216.25,
                  "y":108.5
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":5,
-         "name":"crates",
-         "objects":[
+                }, 
                 {
                  "gid":207,
                  "height":18,
                  "id":2,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -132,6 +128,12 @@
                  "height":18,
                  "id":3,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -144,6 +146,12 @@
                  "height":18,
                  "id":4,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -156,6 +164,12 @@
                  "height":18,
                  "id":5,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -168,6 +182,12 @@
                  "height":18,
                  "id":6,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -180,6 +200,12 @@
                  "height":18,
                  "id":7,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -192,6 +218,12 @@
                  "height":18,
                  "id":8,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -204,6 +236,12 @@
                  "height":18,
                  "id":9,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -216,6 +254,12 @@
                  "height":18,
                  "id":10,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -228,6 +272,12 @@
                  "height":18,
                  "id":11,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -240,6 +290,12 @@
                  "height":18,
                  "id":12,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -252,6 +308,12 @@
                  "height":18,
                  "id":13,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -264,6 +326,12 @@
                  "height":18,
                  "id":14,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -276,6 +344,12 @@
                  "height":18,
                  "id":15,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -288,6 +362,12 @@
                  "height":18,
                  "id":16,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -300,6 +380,12 @@
                  "height":18,
                  "id":17,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -312,6 +398,12 @@
                  "height":18,
                  "id":18,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -324,6 +416,12 @@
                  "height":18,
                  "id":19,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -336,6 +434,12 @@
                  "height":18,
                  "id":20,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -348,6 +452,12 @@
                  "height":18,
                  "id":21,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -360,6 +470,12 @@
                  "height":18,
                  "id":22,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -372,6 +488,12 @@
                  "height":18,
                  "id":23,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -384,6 +506,12 @@
                  "height":18,
                  "id":24,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -396,6 +524,12 @@
                  "height":18,
                  "id":25,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -408,6 +542,12 @@
                  "height":18,
                  "id":26,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -420,6 +560,12 @@
                  "height":18,
                  "id":27,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -432,6 +578,12 @@
                  "height":18,
                  "id":28,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -444,52 +596,48 @@
                  "height":18,
                  "id":29,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"crate"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":18,
                  "x":342,
                  "y":216.25
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":6,
-         "name":"Growth Object",
-         "objects":[
+                }, 
                 {
                  "gid":309,
                  "height":18,
                  "id":32,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"grow"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":18,
                  "x":54.25,
                  "y":324
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":7,
-         "name":"Bounce Object",
-         "objects":[
+                }, 
                 {
                  "gid":288,
                  "height":18,
                  "id":33,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"bounce"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -502,6 +650,12 @@
                  "height":18,
                  "id":34,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"bounce"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -514,29 +668,30 @@
                  "height":18,
                  "id":35,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"bounce"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":18,
                  "x":306.25,
                  "y":324.25
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":8,
-         "name":"Coins",
-         "objects":[
+                }, 
                 {
                  "gid":332,
                  "height":18,
                  "id":36,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -549,6 +704,12 @@
                  "height":18,
                  "id":37,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -561,6 +722,12 @@
                  "height":18,
                  "id":38,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -573,6 +740,12 @@
                  "height":18,
                  "id":39,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -585,6 +758,12 @@
                  "height":18,
                  "id":40,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -597,18 +776,31 @@
                  "height":18,
                  "id":41,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":18,
                  "x":324,
                  "y":180.25
-                }, 
+                },
+            
                 {
                  "gid":332,
                  "height":18,
                  "id":42,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -621,6 +813,12 @@
                  "height":18,
                  "id":43,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -633,6 +831,12 @@
                  "height":18,
                  "id":44,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -645,6 +849,12 @@
                  "height":18,
                  "id":45,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -657,6 +867,12 @@
                  "height":18,
                  "id":46,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -669,6 +885,12 @@
                  "height":18,
                  "id":47,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -681,6 +903,12 @@
                  "height":18,
                  "id":48,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -693,6 +921,12 @@
                  "height":18,
                  "id":49,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -705,6 +939,12 @@
                  "height":18,
                  "id":50,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -717,6 +957,12 @@
                  "height":18,
                  "id":51,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coin"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -729,12 +975,36 @@
                  "height":18,
                  "id":52,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"diamond"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":18,
                  "x":396.75,
                  "y":71.75
+                }, 
+                {
+                 "gid":129,
+                 "height":18,
+                 "id":53,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"shrink"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":18,
+                 "x":36,
+                 "y":180
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -742,8 +1012,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":9,
- "nextobjectid":53,
+ "nextlayerid":10,
+ "nextobjectid":54,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
@@ -763,8 +1033,17 @@
          "tilewidth":18
         }, 
         {
+         "columns":20,
          "firstgid":181,
-         "source":"..\/kenney_pixel-platformer\/Tiled\/tileset-tiles.tsx"
+         "image":"..\/kenney_pixel-platformer\/Tilemap\/tilemap_packed.png",
+         "imageheight":162,
+         "imagewidth":360,
+         "margin":0,
+         "name":"tileset-tiles",
+         "spacing":0,
+         "tilecount":180,
+         "tileheight":18,
+         "tilewidth":18
         }],
  "tilewidth":18,
  "type":"map",
